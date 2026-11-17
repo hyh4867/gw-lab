@@ -1,0 +1,226 @@
+[
+ {
+  "use": "GW151226 event",
+  "file": "H-H1_GWOSC_4KHZ_R1-1135134303-4096.hdf5",
+  "url": "https://gwosc.org/eventapi/json/GWTC-1-confident/GW151226/v2/H-H1_GWOSC_4KHZ_R1-1135134303-4096.hdf5",
+  "bytes": 69367295,
+  "sha256": "e42fee9452e34d22d96c11cbaa96c7a545133b72d53ad30637769158ac1d066d"
+ },
+ {
+  "use": "GW151226 event",
+  "file": "H-H1_GWOSC_4KHZ_R1-1135136335-32.hdf5",
+  "url": "https://gwosc.org/eventapi/json/GWTC-1-confident/GW151226/v2/H-H1_GWOSC_4KHZ_R1-1135136335-32.hdf5",
+  "bytes": 1040482,
+  "sha256": "e47c44aef95d7929e2a5a7723787acaa82545b55e7b6ac998e8acf6ccc65f264"
+ },
+ {
+  "use": "overlap check (not used for background)",
+  "file": "H-H1_LOSC_4_V1-1126256640-4096.hdf5",
+  "url": "https://gwosc.org/archive/data/O1/1126170624/H-H1_LOSC_4_V1-1126256640-4096.hdf5",
+  "bytes": 130159479,
+  "sha256": "30ad150a40c911e24652f2ffc2f8e7a92bb60d579531dde3160f475bb306c41a"
+ },
+ {
+  "use": "GW151226 event",
+  "file": "L-L1_GWOSC_4KHZ_R1-1135134303-4096.hdf5",
+  "url": "https://gwosc.org/eventapi/json/GWTC-1-confident/GW151226/v2/L-L1_GWOSC_4KHZ_R1-1135134303-4096.hdf5",
+  "bytes": 128039935,
+  "sha256": "651f64f33599388115f044acc0e873df8e8864da98b95a4d218bededbe36ff1a"
+ },
+ {
+  "use": "GW151226 event",
+  "file": "L-L1_GWOSC_4KHZ_R1-1135136335-32.hdf5",
+  "url": "https://gwosc.org/eventapi/json/GWTC-1-confident/GW151226/v2/L-L1_GWOSC_4KHZ_R1-1135136335-32.hdf5",
+  "bytes": 1022103,
+  "sha256": "90b6538f635d6c795bc3923139fcf2f1382346360997107b5a7c45ba293c48fc"
+ },
+ {
+  "use": "overlap check (not used for background)",
+  "file": "L-L1_LOSC_4_V1-1126256640-4096.hdf5",
+  "url": "https://gwosc.org/archive/data/O1/1126170624/L-L1_LOSC_4_V1-1126256640-4096.hdf5",
+  "bytes": 120033701,
+  "sha256": "b6896cb749931cfc0c35fb01e750f1c4e6847830122f9afa5640ebc78e97f384"
+ },
+ {
+  "use": "background GW150914",
+  "file": "H-H1_LOSC_4_V1-1126309888-4096.hdf5",
+  "url": "https://gwosc.org/archive/data/O1/1126170624/H-H1_LOSC_4_V1-1126309888-4096.hdf5",
+  "bytes": 130181364,
+  "sha256": "e010d118c00b2b9438003f44b044f31236563d8417b05a672662302eef6d0e73"
+ },
+ {
+  "use": "background GW150914",
+  "file": "L-L1_LOSC_4_V1-1126309888-4096.hdf5",
+  "url": "https://gwosc.org/archive/data/O1/1126170624/L-L1_LOSC_4_V1-1126309888-4096.hdf5",
+  "bytes": 125941264,
+  "sha256": "7f5317a3645e891e021db458dee67d121a1f1c3cbd0fe2004bc7287de8db8892"
+ },
+ {
+  "use": "background GW150914",
+  "file": "H-H1_LOSC_4_V1-1126313984-4096.hdf5",
+  "url": "https://gwosc.org/archive/data/O1/1126170624/H-H1_LOSC_4_V1-1126313984-4096.hdf5",
+  "bytes": 130178341,
+  "sha256": "7ffee2efdb7e4d4909fc51fdb77037b85edfd8a9e601dba6e6d36b330ee26c4a"
+ },
+ {
+  "use": "background GW150914",
+  "file": "L-L1_LOSC_4_V1-1126313984-4096.hdf5",
+  "url": "https://gwosc.org/archive/data/O1/1126170624/L-L1_LOSC_4_V1-1126313984-4096.hdf5",
+  "bytes": 125893360,
+  "sha256": "2a4b87e93c628ad8d369c897d6b4476ab36a31dbbb2e507b215a2936873406ee"
+ },
+ {
+  "use": "background GW150914",
+  "file": "H-H1_LOSC_4_V1-1126318080-4096.hdf5",
+  "url": "https://gwosc.org/archive/data/O1/1126170624/H-H1_LOSC_4_V1-1126318080-4096.hdf5",
+  "bytes": 130171133,
+  "sha256": "5c29608477d527646a1bba9cf70acd44ff6f964b042d228bffa611a658a5fb7d"
+ },
+ {
+  "use": "background GW150914",
+  "file": "L-L1_LOSC_4_V1-1126318080-4096.hdf5",
+  "url": "https://gwosc.org/archive/data/O1/1126170624/L-L1_LOSC_4_V1-1126318080-4096.hdf5",
+  "bytes": 125820553,
+  "sha256": "4df140036c6fb73e2bcda6c4e11cb68fb85c671045cef8c1d84fd350c7cd6373"
+ },
+ {
+  "use": "background GW150914",
+  "file": "H-H1_LOSC_4_V1-1126322176-4096.hdf5",
+  "url": "https://gwosc.org/archive/data/O1/1126170624/H-H1_LOSC_4_V1-1126322176-4096.hdf5",
+  "bytes": 130173566,
+  "sha256": "9ea6b08e80eaf02a87c6d22cd989b3a1c7a408b55edf5d3e0263ff64a727cf53"
+ },
+ {
+  "use": "background GW150914",
+  "file": "L-L1_LOSC_4_V1-1126322176-4096.hdf5",
+  "url": "https://gwosc.org/archive/data/O1/1126170624/L-L1_LOSC_4_V1-1126322176-4096.hdf5",
+  "bytes": 125841353,
+  "sha256": "73bf86ae25df7a27e9c0829fd2fbaf4eb1bf148310f43ed3ac593b029182668d"
+ },
+ {
+  "use": "background GW150914",
+  "file": "H-H1_LOSC_4_V1-1126404096-4096.hdf5",
+  "url": "https://gwosc.org/archive/data/O1/1126170624/H-H1_LOSC_4_V1-1126404096-4096.hdf5",
+  "bytes": 130188567,
+  "sha256": "3ebcef0f07c332b550c2610b2ca1de0ed97e85344eb51721b0fc35bf8fce937e"
+ },
+ {
+  "use": "background GW150914",
+  "file": "L-L1_LOSC_4_V1-1126404096-4096.hdf5",
+  "url": "https://gwosc.org/archive/data/O1/1126170624/L-L1_LOSC_4_V1-1126404096-4096.hdf5",
+  "bytes": 128543880,
+  "sha256": "2992b60a698e2e1ca327c986a1f4adb669f1d66bc33be8b3995b30237d343018"
+ },
+ {
+  "use": "background GW150914",
+  "file": "H-H1_LOSC_4_V1-1126105088-4096.hdf5",
+  "url": "https://gwosc.org/archive/data/O1/1125122048/H-H1_LOSC_4_V1-1126105088-4096.hdf5",
+  "bytes": 130171386,
+  "sha256": "475dc24380e6b6ebdd4bd709d1836ad2f904f00f98048c89786c8f5e448d4ede"
+ },
+ {
+  "use": "background GW150914",
+  "file": "L-L1_LOSC_4_V1-1126105088-4096.hdf5",
+  "url": "https://gwosc.org/archive/data/O1/1125122048/L-L1_LOSC_4_V1-1126105088-4096.hdf5",
+  "bytes": 126774593,
+  "sha256": "d68825df1cb1e83440c1e94bab9e02ac6768084ed27ecbf81397ca96ca1cd2c9"
+ },
+ {
+  "use": "background GW150914",
+  "file": "H-H1_LOSC_4_V1-1126100992-4096.hdf5",
+  "url": "https://gwosc.org/archive/data/O1/1125122048/H-H1_LOSC_4_V1-1126100992-4096.hdf5",
+  "bytes": 130170442,
+  "sha256": "8ca06790a285100067489de735e2ed4c48807ef958ea7d263fb505d13f4a9c5c"
+ },
+ {
+  "use": "background GW150914",
+  "file": "L-L1_LOSC_4_V1-1126100992-4096.hdf5",
+  "url": "https://gwosc.org/archive/data/O1/1125122048/L-L1_LOSC_4_V1-1126100992-4096.hdf5",
+  "bytes": 126751658,
+  "sha256": "aee3cae8eca6b9b58d4ee623509b123c333fc34fd4299f0c42c13bfeb94ff442"
+ },
+ {
+  "use": "background GW150914",
+  "file": "H-H1_LOSC_4_V1-1126092800-4096.hdf5",
+  "url": "https://gwosc.org/archive/data/O1/1125122048/H-H1_LOSC_4_V1-1126092800-4096.hdf5",
+  "bytes": 130165016,
+  "sha256": "785bc5dac65d1b4b96ce0be8090f7eef60fea012b8c5cf0e62f4acc91f9f0fd7"
+ },
+ {
+  "use": "background GW150914",
+  "file": "L-L1_LOSC_4_V1-1126092800-4096.hdf5",
+  "url": "https://gwosc.org/archive/data/O1/1125122048/L-L1_LOSC_4_V1-1126092800-4096.hdf5",
+  "bytes": 126681538,
+  "sha256": "74101a6f420c41659814f74f9adc28303ecb3dc4f24aa4d3f145565a8462460e"
+ },
+ {
+  "use": "background GW151226",
+  "file": "H-H1_LOSC_4_V1-1135140864-4096.hdf5",
+  "url": "https://gwosc.org/archive/data/O1/1134559232/H-H1_LOSC_4_V1-1135140864-4096.hdf5",
+  "bytes": 130074527,
+  "sha256": "45296a0e71119d77e78d0de0c0877d7cc025f03afb033df19087538dcd756d51"
+ },
+ {
+  "use": "background GW151226",
+  "file": "L-L1_LOSC_4_V1-1135140864-4096.hdf5",
+  "url": "https://gwosc.org/archive/data/O1/1134559232/L-L1_LOSC_4_V1-1135140864-4096.hdf5",
+  "bytes": 127956979,
+  "sha256": "e563b7b9e0844178190a21e25e5e4f3cecb4aa3f071afbc6277dd26225325d4a"
+ },
+ {
+  "use": "background GW151226",
+  "file": "H-H1_LOSC_4_V1-1135144960-4096.hdf5",
+  "url": "https://gwosc.org/archive/data/O1/1134559232/H-H1_LOSC_4_V1-1135144960-4096.hdf5",
+  "bytes": 130074623,
+  "sha256": "49eb9b9c3bc7d4a3df446093a5c7917761a9152a2c08f86be9174c4fe0f67e77"
+ },
+ {
+  "use": "background GW151226",
+  "file": "L-L1_LOSC_4_V1-1135144960-4096.hdf5",
+  "url": "https://gwosc.org/archive/data/O1/1134559232/L-L1_LOSC_4_V1-1135144960-4096.hdf5",
+  "bytes": 127952343,
+  "sha256": "913bdb308ae493f2ae178b3a6cdf3e259366df9a485cc38119ce33c0f12fc017"
+ },
+ {
+  "use": "background GW151226",
+  "file": "H-H1_LOSC_4_V1-1135153152-4096.hdf5",
+  "url": "https://gwosc.org/archive/data/O1/1134559232/H-H1_LOSC_4_V1-1135153152-4096.hdf5",
+  "bytes": 130064645,
+  "sha256": "25b2fa11e8fb211763250833f772becc555876ddcaafd6e5daaef95d8803b21f"
+ },
+ {
+  "use": "background GW151226",
+  "file": "L-L1_LOSC_4_V1-1135153152-4096.hdf5",
+  "url": "https://gwosc.org/archive/data/O1/1134559232/L-L1_LOSC_4_V1-1135153152-4096.hdf5",
+  "bytes": 128090436,
+  "sha256": "7e2c039affd2ddf13fe495f3875821b08111446b65ef168196f5a662de88677f"
+ },
+ {
+  "use": "background GW151226",
+  "file": "H-H1_LOSC_4_V1-1135157248-4096.hdf5",
+  "url": "https://gwosc.org/archive/data/O1/1134559232/H-H1_LOSC_4_V1-1135157248-4096.hdf5",
+  "bytes": 130081606,
+  "sha256": "e9402851ca1e34925dad463f827a50af35131d0e84e8ba050eeb657bef303bd3"
+ },
+ {
+  "use": "background GW151226",
+  "file": "L-L1_LOSC_4_V1-1135157248-4096.hdf5",
+  "url": "https://gwosc.org/archive/data/O1/1134559232/L-L1_LOSC_4_V1-1135157248-4096.hdf5",
+  "bytes": 128196479,
+  "sha256": "22d094fceac66cf3da441c84f1c031b4a4d7099f1d14cd36fafdbf5a5d12cc84"
+ },
+ {
+  "use": "GWTC-1 posterior samples",
+  "file": "GW150914_GWTC-1.hdf5",
+  "url": "https://dcc.ligo.org/public/0157/P1800370/005/GW150914_GWTC-1.hdf5",
+  "bytes": 7026464,
+  "sha256": "21fc54453e73df01340fcfe11fa69972699e68f4196a04fbb04e5e8907e874cb"
+ },
+ {
+  "use": "GWTC-1 posterior samples",
+  "file": "GW151226_GWTC-1.hdf5",
+  "url": "https://dcc.ligo.org/public/0157/P1800370/005/GW151226_GWTC-1.hdf5",
+  "bytes": 10603104,
+  "sha256": "03aa4afaba1ce0de82d5f32b4f4e2f48129da797990cb5ae70fe98d09b3e4a23"
+ }
+]

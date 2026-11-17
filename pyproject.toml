@@ -1,0 +1,10 @@
+[project]
+name = "gwlab"
+version = "0.1.0"
+description = "Find GW150914 in public LIGO strain with a hand-written matched filter"
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+markers = ["data: needs the downloaded GWOSC strain files in data/raw"]

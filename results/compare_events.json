@@ -1,0 +1,123 @@
+{
+ "GW150914": {
+  "m1": 36.0,
+  "m2": 36.0,
+  "chi": 0.0,
+  "mc": 31.339820278660465,
+  "rho_h": 19.69252191493251,
+  "rho_l": 13.51881582065092,
+  "rho_net": 23.886268033386436,
+  "f_isco_hz": 61.07187167551113,
+  "snr2_freq_H1": {
+   "f05": 33.5625,
+   "f50": 100.96875,
+   "f95": 227.46875,
+   "fraction_above_f_isco": 0.7263386543988619
+  },
+  "snr2_freq_L1": {
+   "f05": 37.8125,
+   "f50": 111.59375,
+   "f95": 233.15625,
+   "fraction_above_f_isco": 0.7638217450298503
+  },
+  "f_at_amplitude_peak_hz": 166.19463708564786,
+  "time_35hz_to_peak_s": 0.111083984375,
+  "cycles_35hz_to_peak": 6.095563556448086,
+  "time_22hz_to_peak_s": 0.439453125,
+  "cycles_22hz_to_peak": 14.92666796372938,
+  "cycles_f05_to_f95_H1": 6.537383853858224,
+  "time_f05_to_f95_H1_s": 0.1240234375,
+  "G12": {
+   "value": 6.095563556448086,
+   "literature": 8,
+   "range": [
+    6,
+    10
+   ],
+   "reproduced": true
+  },
+  "visibility": {
+   "H1": {
+    "bp_signal_peak_over_noise_rms": 8.128599621052022,
+    "bp_noise_rms": 0.3763317993991171,
+    "q_energy_max_at_event": 63.45887940450481,
+    "q_energy_max_offsource_median": 7.627588152798464,
+    "q_energy_max_offsource_max": 8.368055861606166,
+    "n_offsource_windows": 4
+   },
+   "L1": {
+    "bp_signal_peak_over_noise_rms": 6.022536098255862,
+    "bp_noise_rms": 0.3693364858884473,
+    "q_energy_max_at_event": 35.41441110440166,
+    "q_energy_max_offsource_median": 6.8330109006802395,
+    "q_energy_max_offsource_max": 7.497599353069067,
+    "n_offsource_windows": 4
+   }
+  },
+  "newtonian_chirp_snr_over_full": {
+   "H1": 0.8578253413106116,
+   "L1": 0.7971424875964979
+  }
+ },
+ "GW151226": {
+  "m1": 15.351592371396519,
+  "m2": 8.244855013256288,
+  "chi": 0.2145010674537504,
+  "mc": 9.701358362933156,
+  "rho_h": 10.30222406685659,
+  "rho_l": 7.490043459992712,
+  "rho_net": 12.737212087277921,
+  "f_isco_hz": 186.34901639883032,
+  "snr2_freq_H1": {
+   "f05": 32.890625,
+   "f50": 78.125,
+   "f95": 292.578125,
+   "fraction_above_f_isco": 0.12073364594967362
+  },
+  "snr2_freq_L1": {
+   "f05": 41.796875,
+   "f50": 111.296875,
+   "f95": 406.015625,
+   "fraction_above_f_isco": 0.2334387954547228
+  },
+  "f_at_amplitude_peak_hz": 514.9842218206529,
+  "time_35hz_to_peak_s": 1.111083984375,
+  "cycles_35hz_to_peak": 60.06315037901163,
+  "time_22hz_to_peak_s": 4.0185546875,
+  "cycles_22hz_to_peak": 137.01339010914901,
+  "cycles_f05_to_f95_H1": 64.32642444131666,
+  "time_f05_to_f95_H1_s": 1.2685546875,
+  "G12": {
+   "value": 60.06315037901163,
+   "literature": 55,
+   "range": [
+    44,
+    66
+   ],
+   "reproduced": true
+  },
+  "visibility": {
+   "H1": {
+    "bp_signal_peak_over_noise_rms": 1.9133538684762923,
+    "bp_noise_rms": 0.3760740416916868,
+    "q_energy_max_at_event": 10.280255513678679,
+    "q_energy_max_offsource_median": 7.291476894584692,
+    "q_energy_max_offsource_max": 11.225858285067405,
+    "n_offsource_windows": 20
+   },
+   "L1": {
+    "bp_signal_peak_over_noise_rms": 1.8999297857832584,
+    "bp_noise_rms": 0.3766492022866715,
+    "q_energy_max_at_event": 16.53152129556412,
+    "q_energy_max_offsource_median": 7.215514322609041,
+    "q_energy_max_offsource_max": 10.285581301354915,
+    "n_offsource_windows": 20
+   }
+  },
+  "newtonian_chirp_snr_over_full": {
+   "H1": 0.830871453769679,
+   "L1": 0.7267052849730196
+  },
+  "snr_fraction_lost_without_spin": 0.09804949075981495
+ }
+}

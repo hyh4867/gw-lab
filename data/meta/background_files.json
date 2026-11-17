@@ -1,0 +1,318 @@
+{
+ "GW150914": {
+  "event_gps": 1126259462.4,
+  "n_listed_h1": 55,
+  "n_listed_l1": 43,
+  "n_common": 29,
+  "chosen": [
+   {
+    "gps_start": 1126309888,
+    "offset_from_event_s": 52473.59999990463,
+    "files": {
+     "H1": {
+      "url": "https://gwosc.org/archive/data/O1/1126170624/H-H1_LOSC_4_V1-1126309888-4096.hdf5",
+      "bytes": 130181364
+     },
+     "L1": {
+      "url": "https://gwosc.org/archive/data/O1/1126170624/L-L1_LOSC_4_V1-1126309888-4096.hdf5",
+      "bytes": 125941264
+     }
+    }
+   },
+   {
+    "gps_start": 1126313984,
+    "offset_from_event_s": 56569.59999990463,
+    "files": {
+     "H1": {
+      "url": "https://gwosc.org/archive/data/O1/1126170624/H-H1_LOSC_4_V1-1126313984-4096.hdf5",
+      "bytes": 130178341
+     },
+     "L1": {
+      "url": "https://gwosc.org/archive/data/O1/1126170624/L-L1_LOSC_4_V1-1126313984-4096.hdf5",
+      "bytes": 125893360
+     }
+    }
+   },
+   {
+    "gps_start": 1126318080,
+    "offset_from_event_s": 60665.59999990463,
+    "files": {
+     "H1": {
+      "url": "https://gwosc.org/archive/data/O1/1126170624/H-H1_LOSC_4_V1-1126318080-4096.hdf5",
+      "bytes": 130171133
+     },
+     "L1": {
+      "url": "https://gwosc.org/archive/data/O1/1126170624/L-L1_LOSC_4_V1-1126318080-4096.hdf5",
+      "bytes": 125820553
+     }
+    }
+   },
+   {
+    "gps_start": 1126322176,
+    "offset_from_event_s": 64761.59999990463,
+    "files": {
+     "H1": {
+      "url": "https://gwosc.org/archive/data/O1/1126170624/H-H1_LOSC_4_V1-1126322176-4096.hdf5",
+      "bytes": 130173566
+     },
+     "L1": {
+      "url": "https://gwosc.org/archive/data/O1/1126170624/L-L1_LOSC_4_V1-1126322176-4096.hdf5",
+      "bytes": 125841353
+     }
+    }
+   },
+   {
+    "gps_start": 1126404096,
+    "offset_from_event_s": 146681.59999990463,
+    "files": {
+     "H1": {
+      "url": "https://gwosc.org/archive/data/O1/1126170624/H-H1_LOSC_4_V1-1126404096-4096.hdf5",
+      "bytes": 130188567
+     },
+     "L1": {
+      "url": "https://gwosc.org/archive/data/O1/1126170624/L-L1_LOSC_4_V1-1126404096-4096.hdf5",
+      "bytes": 128543880
+     }
+    }
+   },
+   {
+    "gps_start": 1126105088,
+    "offset_from_event_s": -152326.40000009537,
+    "files": {
+     "H1": {
+      "url": "https://gwosc.org/archive/data/O1/1125122048/H-H1_LOSC_4_V1-1126105088-4096.hdf5",
+      "bytes": 130171386
+     },
+     "L1": {
+      "url": "https://gwosc.org/archive/data/O1/1125122048/L-L1_LOSC_4_V1-1126105088-4096.hdf5",
+      "bytes": 126774593
+     }
+    }
+   },
+   {
+    "gps_start": 1126100992,
+    "offset_from_event_s": -156422.40000009537,
+    "files": {
+     "H1": {
+      "url": "https://gwosc.org/archive/data/O1/1125122048/H-H1_LOSC_4_V1-1126100992-4096.hdf5",
+      "bytes": 130170442
+     },
+     "L1": {
+      "url": "https://gwosc.org/archive/data/O1/1125122048/L-L1_LOSC_4_V1-1126100992-4096.hdf5",
+      "bytes": 126751658
+     }
+    }
+   },
+   {
+    "gps_start": 1126092800,
+    "offset_from_event_s": -164614.40000009537,
+    "files": {
+     "H1": {
+      "url": "https://gwosc.org/archive/data/O1/1125122048/H-H1_LOSC_4_V1-1126092800-4096.hdf5",
+      "bytes": 130165016
+     },
+     "L1": {
+      "url": "https://gwosc.org/archive/data/O1/1125122048/L-L1_LOSC_4_V1-1126092800-4096.hdf5",
+      "bytes": 126681538
+     }
+    }
+   }
+  ],
+  "rejected_before_filling": [
+   {
+    "gps_start": 1126256640,
+    "why": "overlaps the event file"
+   },
+   {
+    "gps_start": 1126260736,
+    "why": "overlaps the event file"
+   },
+   {
+    "gps_start": 1126297600,
+    "why": "duty cycle below 100 %",
+    "duty": {
+     "H1": 90.2587890625,
+     "L1": 3.5400390625
+    }
+   },
+   {
+    "gps_start": 1126301696,
+    "why": "duty cycle below 100 %",
+    "duty": {
+     "H1": 71.77734375,
+     "L1": 87.20703125
+    }
+   },
+   {
+    "gps_start": 1126305792,
+    "why": "duty cycle below 100 %",
+    "duty": {
+     "H1": 29.736328125,
+     "L1": 100.0
+    }
+   },
+   {
+    "gps_start": 1126326272,
+    "why": "duty cycle below 100 %",
+    "duty": {
+     "H1": 97.0703125,
+     "L1": 100.0
+    }
+   },
+   {
+    "gps_start": 1126330368,
+    "why": "duty cycle below 100 %",
+    "duty": {
+     "H1": 15.4296875,
+     "L1": 100.0
+    }
+   },
+   {
+    "gps_start": 1126162432,
+    "why": "duty cycle below 100 %",
+    "duty": {
+     "H1": 87.79296875,
+     "L1": 29.931640625
+    }
+   },
+   {
+    "gps_start": 1126400000,
+    "why": "duty cycle below 100 %",
+    "duty": {
+     "H1": 57.2509765625,
+     "L1": 100.0
+    }
+   },
+   {
+    "gps_start": 1126109184,
+    "why": "duty cycle below 100 %",
+    "duty": {
+     "H1": 100.0,
+     "L1": 47.705078125
+    }
+   },
+   {
+    "gps_start": 1126408192,
+    "why": "duty cycle below 100 %",
+    "duty": {
+     "H1": 100.0,
+     "L1": 41.0888671875
+    }
+   },
+   {
+    "gps_start": 1126412288,
+    "why": "duty cycle below 100 %",
+    "duty": {
+     "H1": 100.0,
+     "L1": 28.80859375
+    }
+   },
+   {
+    "gps_start": 1126416384,
+    "why": "duty cycle below 100 %",
+    "duty": {
+     "H1": 98.53515625,
+     "L1": 100.0
+    }
+   },
+   {
+    "gps_start": 1126096896,
+    "why": "duty cycle below 100 %",
+    "duty": {
+     "H1": 100.0,
+     "L1": 65.5029296875
+    }
+   },
+   {
+    "gps_start": 1126420480,
+    "why": "duty cycle below 100 %",
+    "duty": {
+     "H1": 100.0,
+     "L1": 34.4970703125
+    }
+   }
+  ]
+ },
+ "GW151226": {
+  "event_gps": 1135136350.6,
+  "n_listed_h1": 86,
+  "n_listed_l1": 62,
+  "n_common": 47,
+  "chosen": [
+   {
+    "gps_start": 1135140864,
+    "offset_from_event_s": 6561.400000095367,
+    "files": {
+     "H1": {
+      "url": "https://gwosc.org/archive/data/O1/1134559232/H-H1_LOSC_4_V1-1135140864-4096.hdf5",
+      "bytes": 130074527
+     },
+     "L1": {
+      "url": "https://gwosc.org/archive/data/O1/1134559232/L-L1_LOSC_4_V1-1135140864-4096.hdf5",
+      "bytes": 127956979
+     }
+    }
+   },
+   {
+    "gps_start": 1135144960,
+    "offset_from_event_s": 10657.400000095367,
+    "files": {
+     "H1": {
+      "url": "https://gwosc.org/archive/data/O1/1134559232/H-H1_LOSC_4_V1-1135144960-4096.hdf5",
+      "bytes": 130074623
+     },
+     "L1": {
+      "url": "https://gwosc.org/archive/data/O1/1134559232/L-L1_LOSC_4_V1-1135144960-4096.hdf5",
+      "bytes": 127952343
+     }
+    }
+   },
+   {
+    "gps_start": 1135153152,
+    "offset_from_event_s": 18849.400000095367,
+    "files": {
+     "H1": {
+      "url": "https://gwosc.org/archive/data/O1/1134559232/H-H1_LOSC_4_V1-1135153152-4096.hdf5",
+      "bytes": 130064645
+     },
+     "L1": {
+      "url": "https://gwosc.org/archive/data/O1/1134559232/L-L1_LOSC_4_V1-1135153152-4096.hdf5",
+      "bytes": 128090436
+     }
+    }
+   },
+   {
+    "gps_start": 1135157248,
+    "offset_from_event_s": 22945.400000095367,
+    "files": {
+     "H1": {
+      "url": "https://gwosc.org/archive/data/O1/1134559232/H-H1_LOSC_4_V1-1135157248-4096.hdf5",
+      "bytes": 130081606
+     },
+     "L1": {
+      "url": "https://gwosc.org/archive/data/O1/1134559232/L-L1_LOSC_4_V1-1135157248-4096.hdf5",
+      "bytes": 128196479
+     }
+    }
+   }
+  ],
+  "rejected_before_filling": [
+   {
+    "gps_start": 1135132672,
+    "why": "overlaps the event file"
+   },
+   {
+    "gps_start": 1135136768,
+    "why": "overlaps the event file"
+   },
+   {
+    "gps_start": 1135149056,
+    "why": "duty cycle below 100 %",
+    "duty": {
+     "H1": 89.2333984375,
+     "L1": 100.0
+    }
+   }
+  ]
+ }
+}

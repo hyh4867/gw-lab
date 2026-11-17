@@ -1,0 +1,358 @@
+{
+ "whitened_power_event_segment": {
+  "H1": {
+   "truncated_inverse_psd": {
+    "rms_time_domain": 1.324210631776406,
+    "variance_total": 1.77639217527862,
+    "bands": {
+     "0-15": {
+      "variance": 0.733027959943398,
+      "expected_if_white": 0.00732421875
+     },
+     "15-20": {
+      "variance": 0.002730395849583572,
+      "expected_if_white": 0.00244140625
+     },
+     "20-35": {
+      "variance": 0.0069363693418680724,
+      "expected_if_white": 0.00732421875
+     },
+     "35-350": {
+      "variance": 0.15893286081075203,
+      "expected_if_white": 0.15380859375
+     },
+     "350-1024": {
+      "variance": 0.36411171408575965,
+      "expected_if_white": 0.3291015625
+     },
+     "1024-2048": {
+      "variance": 0.5106180315028825,
+      "expected_if_white": 0.5
+     }
+    }
+   },
+   "plain_interpolated_psd": {
+    "rms_time_domain": 0.9866553183589076,
+    "variance_total": 0.990887423923489,
+    "bands": {
+     "0-15": {
+      "variance": 0.0,
+      "expected_if_white": 0.00732421875
+     },
+     "15-20": {
+      "variance": 0.0026856441410036693,
+      "expected_if_white": 0.00244140625
+     },
+     "20-35": {
+      "variance": 0.006937229827549457,
+      "expected_if_white": 0.00732421875
+     },
+     "35-350": {
+      "variance": 0.15349111136512955,
+      "expected_if_white": 0.15380859375
+     },
+     "350-1024": {
+      "variance": 0.3341720130430551,
+      "expected_if_white": 0.3291015625
+     },
+     "1024-2048": {
+      "variance": 0.4935487854610861,
+      "expected_if_white": 0.5
+     }
+    }
+   },
+   "lines_20_1024": {
+    "fraction_of_bins_above_10x_mean": 0.0014006474103585658,
+    "fraction_of_power_in_those_bins": 0.08332299277533378,
+    "expected_fraction_of_bins_gaussian": 4.5399929762484854e-05,
+    "loudest_frequencies_hz": [
+     991.75,
+     60.0,
+     994.28125,
+     998.8125,
+     995.65625,
+     992.78125,
+     991.15625,
+     991.21875,
+     991.125,
+     997.875,
+     992.8125,
+     991.25
+    ]
+   }
+  },
+  "L1": {
+   "truncated_inverse_psd": {
+    "rms_time_domain": 1.0664101060224358,
+    "variance_total": 1.2497421816989442,
+    "bands": {
+     "0-15": {
+      "variance": 0.09575290717140852,
+      "expected_if_white": 0.00732421875
+     },
+     "15-20": {
+      "variance": 0.0023052180265709086,
+      "expected_if_white": 0.00244140625
+     },
+     "20-35": {
+      "variance": 0.007490428417823064,
+      "expected_if_white": 0.00732421875
+     },
+     "35-350": {
+      "variance": 0.15234203628464194,
+      "expected_if_white": 0.15380859375
+     },
+     "350-1024": {
+      "variance": 0.48450755510293153,
+      "expected_if_white": 0.3291015625
+     },
+     "1024-2048": {
+      "variance": 0.5073399362104765,
+      "expected_if_white": 0.5
+     }
+    }
+   },
+   "plain_interpolated_psd": {
+    "rms_time_domain": 0.9793154962461332,
+    "variance_total": 0.9995484062075749,
+    "bands": {
+     "0-15": {
+      "variance": 0.0,
+      "expected_if_white": 0.00732421875
+     },
+     "15-20": {
+      "variance": 0.0023636189851167447,
+      "expected_if_white": 0.00244140625
+     },
+     "20-35": {
+      "variance": 0.007316067119820291,
+      "expected_if_white": 0.00732421875
+     },
+     "35-350": {
+      "variance": 0.14989550076912567,
+      "expected_if_white": 0.15380859375
+     },
+     "350-1024": {
+      "variance": 0.352506956233787,
+      "expected_if_white": 0.3291015625
+     },
+     "1024-2048": {
+      "variance": 0.4874601703104395,
+      "expected_if_white": 0.5
+     }
+    }
+   },
+   "lines_20_1024": {
+    "fraction_of_bins_above_10x_mean": 0.0022410358565737054,
+    "fraction_of_power_in_those_bins": 0.2609543919121895,
+    "expected_fraction_of_bins_gaussian": 4.5399929762484854e-05,
+    "loudest_frequencies_hz": [
+     1012.25,
+     1017.8125,
+     515.9375,
+     1012.875,
+     1012.90625,
+     1012.84375,
+     1012.9375,
+     1012.8125,
+     1012.78125,
+     1012.96875,
+     1012.75,
+     511.53125
+    ]
+   }
+  }
+ },
+ "whitened_power_offsource_segment_j20": {
+  "H1": {
+   "truncated_inverse_psd": {
+    "rms_time_domain": 1.2395283423408132,
+    "variance_total": 1.7087074043159745,
+    "bands": {
+     "0-15": {
+      "variance": 0.6735359793026022,
+      "expected_if_white": 0.00732421875
+     },
+     "15-20": {
+      "variance": 0.002235124154372585,
+      "expected_if_white": 0.00244140625
+     },
+     "20-35": {
+      "variance": 0.00736176491941869,
+      "expected_if_white": 0.00732421875
+     },
+     "35-350": {
+      "variance": 0.15764963314593014,
+      "expected_if_white": 0.15380859375
+     },
+     "350-1024": {
+      "variance": 0.352632637570857,
+      "expected_if_white": 0.3291015625
+     },
+     "1024-2048": {
+      "variance": 0.515286615432901,
+      "expected_if_white": 0.5
+     }
+    }
+   },
+   "plain_interpolated_psd": {
+    "rms_time_domain": 0.9895314432965608,
+    "variance_total": 0.9934156784320985,
+    "bands": {
+     "0-15": {
+      "variance": 0.0,
+      "expected_if_white": 0.00732421875
+     },
+     "15-20": {
+      "variance": 0.002225789604333335,
+      "expected_if_white": 0.00244140625
+     },
+     "20-35": {
+      "variance": 0.0073944596136667345,
+      "expected_if_white": 0.00732421875
+     },
+     "35-350": {
+      "variance": 0.15415935151279245,
+      "expected_if_white": 0.15380859375
+     },
+     "350-1024": {
+      "variance": 0.3293009996610483,
+      "expected_if_white": 0.3291015625
+     },
+     "1024-2048": {
+      "variance": 0.5003274331954476,
+      "expected_if_white": 0.5
+     }
+    }
+   },
+   "lines_20_1024": {
+    "fraction_of_bins_above_10x_mean": 0.0011827689243027889,
+    "fraction_of_power_in_those_bins": 0.06598546460950504,
+    "expected_fraction_of_bins_gaussian": 4.5399929762484854e-05,
+    "loudest_frequencies_hz": [
+     991.75,
+     59.96875,
+     994.28125,
+     998.8125,
+     992.78125,
+     991.15625,
+     995.65625,
+     991.1875,
+     991.21875,
+     997.71875,
+     991.125,
+     991.25
+    ]
+   }
+  },
+  "L1": {
+   "truncated_inverse_psd": {
+    "rms_time_domain": 1.2098523970265216,
+    "variance_total": 2.0979200383892485,
+    "bands": {
+     "0-15": {
+      "variance": 0.9132238698486304,
+      "expected_if_white": 0.00732421875
+     },
+     "15-20": {
+      "variance": 0.0029212169165961574,
+      "expected_if_white": 0.00244140625
+     },
+     "20-35": {
+      "variance": 0.0069842600047242956,
+      "expected_if_white": 0.00732421875
+     },
+     "35-350": {
+      "variance": 0.16886232897955164,
+      "expected_if_white": 0.15380859375
+     },
+     "350-1024": {
+      "variance": 0.4954759639697519,
+      "expected_if_white": 0.3291015625
+     },
+     "1024-2048": {
+      "variance": 0.5104377195289369,
+      "expected_if_white": 0.5
+     }
+    }
+   },
+   "plain_interpolated_psd": {
+    "rms_time_domain": 1.0062656463347859,
+    "variance_total": 1.0382191102450748,
+    "bands": {
+     "0-15": {
+      "variance": 0.0,
+      "expected_if_white": 0.00732421875
+     },
+     "15-20": {
+      "variance": 0.002858332686854908,
+      "expected_if_white": 0.00244140625
+     },
+     "20-35": {
+      "variance": 0.006932094450593015,
+      "expected_if_white": 0.00732421875
+     },
+     "35-350": {
+      "variance": 0.16710194832082395,
+      "expected_if_white": 0.15380859375
+     },
+     "350-1024": {
+      "variance": 0.3686063732126126,
+      "expected_if_white": 0.3291015625
+     },
+     "1024-2048": {
+      "variance": 0.4927003656837627,
+      "expected_if_white": 0.5
+     }
+    }
+   },
+   "lines_20_1024": {
+    "fraction_of_bins_above_10x_mean": 0.0031125498007968126,
+    "fraction_of_power_in_those_bins": 0.2521341353028508,
+    "expected_fraction_of_bins_gaussian": 4.5399929762484854e-05,
+    "loudest_frequencies_hz": [
+     1012.25,
+     1017.8125,
+     515.9375,
+     1012.875,
+     1012.84375,
+     1012.90625,
+     1012.8125,
+     1012.9375,
+     1012.78125,
+     1012.75,
+     1012.96875,
+     1013.0
+    ]
+   }
+  }
+ },
+ "bulk_vs_event_file": {
+  "H1": {
+   "overlap_s": 3321.0,
+   "identical": false,
+   "max_abs_diff": 1.5036985350803647e-20,
+   "max_abs_strain": 4.916890759372448e-18,
+   "rms_diff_over_rms_strain": 1.9801427365345873e-05,
+   "asd_ratio_diff_over_data_20_1024": {
+    "median": 9.229859568954799e-10,
+    "max": 1.5430140586530426e-09,
+    "f_at_max_hz": 212.0
+   },
+   "corrcoef": 0.9999999998039384
+  },
+  "L1": {
+   "overlap_s": 3321.0,
+   "identical": false,
+   "max_abs_diff": 1.6777287413115304e-20,
+   "max_abs_strain": 2.5090116887762235e-18,
+   "rms_diff_over_rms_strain": 2.012418653805525e-05,
+   "asd_ratio_diff_over_data_20_1024": {
+    "median": 5.5262526714228955e-09,
+    "max": 8.171787355095844e-09,
+    "f_at_max_hz": 220.75
+   },
+   "corrcoef": 0.9999999997975323
+  }
+ }
+}

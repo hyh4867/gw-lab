@@ -1,0 +1,11 @@
+.venv/
+data/raw/
+data/cache/
+__pycache__/
+.pytest_cache/
+*.hdf5
+*.npz
+logs/*.log
+results/triggers/
+*.pt
+results/pe_bilby/

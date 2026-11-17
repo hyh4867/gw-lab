@@ -1,0 +1,26 @@
+{
+ "seed": 20261116,
+ "region": [
+  7.0,
+  13.0,
+  0.1,
+  -0.3,
+  0.6
+ ],
+ "m2_min": 3.0,
+ "min_match": 0.95,
+ "max_reject": 150,
+ "n_templates": 1318,
+ "n_proposals": 8476,
+ "seconds": 240.15092515945435,
+ "fitting_factor_test": {
+  "n": 500,
+  "min": 0.9193025231361389,
+  "p01": 0.9473961454629898,
+  "p10": 0.96058589220047,
+  "median": 0.9798419177532196,
+  "frac_below_0.95": 0.018,
+  "frac_below_0.90": 0.0
+ },
+ "note": "test points drawn from the proposal distribution; tau window 12 % for neighbours"
+}

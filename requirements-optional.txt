@@ -1,0 +1,7 @@
+# lalsuite: IMRPhenomD templates and independent cross-checks (TaylorF2 phase, antenna patterns)
+# bilby: standard-tool parameter estimation (stage 5). bilby 2.8.2 fails to import its dynesty-3 helpers with dynesty 3.2.0, so dynesty is held below 3
+# torch: optional CNN comparison (stage 5)
+lalsuite
+bilby==2.8.2
+dynesty<3
+torch
