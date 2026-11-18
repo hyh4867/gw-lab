@@ -4,7 +4,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 
-COL = {"H1": "#2a78d6", "L1": "#eb6834", "model": "#0b0b0b", "alt": "#1baf7a", "muted": "#8a8983"}
+COL = {"H1": "#2a78d6", "L1": "#eb6834", "model": "#0b0b0b", "alt": "#1baf7a", "V1": "#1baf7a", "muted": "#8a8983"}
 
 
 def apply():

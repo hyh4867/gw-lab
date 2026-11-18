@@ -1,0 +1,43 @@
+{
+ "data": "B",
+ "template": {
+  "m1": 1.5796353292172873,
+  "m2": 1.202142963170669
+ },
+ "n_sky_points": 200000,
+ "pixel_deg2": 0.2062648062470964,
+ "sigma_1mpc": {
+  "H1": 1061.4510641248098,
+  "L1": 1661.70424918218,
+  "V1": 466.89827463314225
+ },
+ "counterpart_ra_dec_deg": [
+  197.45035416666667,
+  -23.381484166666667
+ ],
+ "HLV": {
+  "area90_deg2": 16.50118449976771,
+  "max_coherent_snr2": 1070.9068010280596,
+  "coherent_snr2_at_counterpart": 1067.4851573046149,
+  "counterpart_inside_90": true,
+  "max_ra_dec_deg": [
+   195.195608145898,
+   -20.716547923386234
+  ],
+  "separation_of_maximum_from_counterpart_deg": 3.38645318167873,
+  "area50_deg2": 5.15662015617741
+ },
+ "HL": {
+  "area90_deg2": 658.6035263469788,
+  "max_coherent_snr2": 1062.0679998099804,
+  "coherent_snr2_at_counterpart": 1057.8999432589228,
+  "counterpart_inside_90": false,
+  "max_ra_dec_deg": [
+   71.59132881972118,
+   26.320057746173305
+  ],
+  "separation_of_maximum_from_counterpart_deg": 131.1403404817814,
+  "area50_deg2": 269.79436657120203
+ },
+ "incoherent_network_snr2_hlv_at_peaks": 1073.1886248025012
+}

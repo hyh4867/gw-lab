@@ -86,6 +86,35 @@ python scripts/download_stage5.py           # 아래 32개 파일을 data/raw/�
 - 일괄 파일(`LOSC_4_V1`)과 사건 파일(`GWOSC_4KHZ_R1`)은 겹치는 3,321초에서 비트 단위로 같지는 않다. 최대 절대 차이 1.5 × 10⁻²⁰(H1), 1.7 × 10⁻²⁰(L1). 차이의 스펙트럼은 20~1024 Hz에서 자료 스펙트럼의 10⁻⁹(H1)~10⁻⁸(L1) 수준이라 분석 대역에서는 같은 자료로 볼 수 있다. 차이가 생긴 이유(저장 정밀도 등)는 확인하지 못했다.
 - 일괄 파일의 구조(`strain/Strain`, `quality/simple/DQmask`)는 사건 파일과 같다.
 
+## 6단계에서 추가한 자료 (2026-11-17)
+
+```
+python scripts/select_background_files.py GW170817   # 메타데이터만 읽어 배경용 파일을 고른다 -> data/meta/background_files_GW170817.json
+python scripts/download_stage6.py                    # 아래 11개 파일을 data/raw/에 받고 SHA-256을 data/meta/stage6_files.json에 적는다
+```
+
+- 합계 1.09 GB. git에 넣지 않는다. 사전 등록(커밋 9673af4) 뒤에 받았다.
+- **자료 A**: GWOSC GWTC-1-confident / GW170817 / v3 (`https://gwosc.org/eventapi/json/GWTC-1-confident/GW170817/v3/`, DOI https://doi.org/10.7935/82H3-HH23). H1, L1, V1의 4 kHz 4096초 파일. GWOSC 문서에 따르면 L1의 glitch가 그대로 들어 있다. CC BY 4.0.
+- **자료 B**: GW170817 발견 논문의 자료 release, v2 (`https://gwosc.org/eventapi/json/O1_O2-Preliminary/GW170817/v2/`, DOI https://doi.org/10.7935/K5B8566F, 문서 `https://gwosc.org/events/GW170817/`). 잡음 제거 뒤 L1의 glitch를 모형으로 뺀 2048초 파일. 문서의 주의점: H1의 마지막 약 150초가 잡음 제거용 window로 오염돼 있고 20 Hz 아래에 잡음이 더해져 있다. CC BY 4.0.
+- **배경용 일괄 파일**: O2 4 kHz 자료 (`https://gwosc.org/archive/data/O2_4KHZ_R1/…`, 문서 `https://gwosc.org/O2/`). CC BY 4.0. 고르는 규칙은 PREREGISTRATION_STAGE6.md 2절.
+- **GWTC-1 사후분포 표본**: LIGO DCC P1800370, `GW170817_GWTC-1.hdf5`의 `IMRPhenomPv2NRT_lowSpin_posterior`. 비교용으로만 쓴다.
+- Virgo 자료의 인용: 아래 인용 문구가 LIGO와 Virgo 자료에 함께 적용된다(GWOSC 안내).
+- 문헌(6단계 사전 등록에 쓴 것, arXiv PDF로 읽음, 저장소에 넣지 않음): 1710.05832, 1710.05833, 1805.11579, 1811.12907.
+
+| 용도 | 파일 | 크기 (byte) | SHA-256 |
+|---|---|---|---|
+| 자료 A (GWTC-1 release, L1 glitch 포함) | `H-H1_GWOSC_4KHZ_R1-1187006835-4096.hdf5` | 129,346,425 | `167fb934a7468d1879b273e9fd6b2f88be028f1511d5aabf82ed36aeaa74703c` |
+| 자료 B (발견 논문 release, glitch 제거) | `H-H1_LOSC_CLN_4_V1-1187007040-2048.hdf5` | 57,932,612 | `27c47e0620a4668d63d13b49e3a9291a9f73ba4ea56e745999d997f6ea0b2ff6` |
+| 자료 A (GWTC-1 release, L1 glitch 포함) | `L-L1_GWOSC_4KHZ_R1-1187006835-4096.hdf5` | 129,727,892 | `667ed4f972e24b456c7abffefe7524395535e92314e6a2314fa2a963abf0bff3` |
+| 자료 B (발견 논문 release, glitch 제거) | `L-L1_LOSC_CLN_4_V1-1187007040-2048.hdf5` | 62,057,913 | `f6bad02d25ffd645048d56e34f941b0a219a34afac2170f658151c5b7e71fea2` |
+| 자료 A (GWTC-1 release, L1 glitch 포함) | `V-V1_GWOSC_4KHZ_R1-1187006835-4096.hdf5` | 129,440,438 | `7e6bf08ddb9ba1af1415828c96dcaef5046f9d53ec73e707587ed9993cc56ac3` |
+| 자료 B (발견 논문 release, glitch 제거) | `V-V1_LOSC_CLN_4_V1-1187007040-2048.hdf5` | 64,737,908 | `31626b9ea4b63cf35a163b95dc8c315162585d9e48d3c5a82332ffa069c1877d` |
+| GW170817 배경 | `H-H1_GWOSC_O2_4KHZ_R1-1187012608-4096.hdf5` | 129,340,237 | `afd2ca59b3a418f9b5ddf595aa8abc29b3646fb3fdb8254df6baf176990aaaf1` |
+| GW170817 배경 | `L-L1_GWOSC_O2_4KHZ_R1-1187012608-4096.hdf5` | 129,801,994 | `463321d4844c7d55714895418d2c0b715f071807dcccb0568757cb019a031f95` |
+| GW170817 배경 | `H-H1_GWOSC_O2_4KHZ_R1-1186996224-4096.hdf5` | 129,341,554 | `309a784ef4deca33db0fa6f9542c9608acccc052937675f53c89ff759b1b7686` |
+| GW170817 배경 | `L-L1_GWOSC_O2_4KHZ_R1-1186996224-4096.hdf5` | 129,686,217 | `b24530a634e791a099cc01df2a5c24c7d23b7441425cb82ce1570a916a62f013` |
+| GWTC-1 사후분포 표본 | `GW170817_GWTC-1.hdf5` | 2,520,704 | `eff59472991bb0f0fa8c1e58057093ce07b82eb4c112364e3578ba16fe54eca9` |
+
 ## 문헌
 
 사전 등록에 쓴 문헌은 arXiv에서 PDF로 받아 읽었다(저장소에 넣지 않음): 1602.03837, 1602.03839, 1602.03840, 1811.12907, 1608.01940, 0907.0700, 1606.04855, 1606.04856(뒤의 둘은 5단계).

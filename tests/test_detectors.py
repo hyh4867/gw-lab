@@ -52,3 +52,19 @@ def test_antenna_power_average():
         fp, fc = detectors.antenna("H1", rng.uniform(0, 2 * np.pi), np.arcsin(rng.uniform(-1, 1)), rng.uniform(0, np.pi))
         v.append(fp**2 + fc**2)
     assert abs(np.mean(v) - 0.4) < 0.01
+
+
+def test_virgo_geometry_and_sidereal_time_match_lal():
+    import warnings
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        import lal
+    gps = 1187008882.4
+    g = float(np.mod(lal.GreenwichMeanSiderealTime(lal.LIGOTimeGPS(gps)), 2 * np.pi))
+    assert abs(detectors.gmst(gps) - g) < 2e-4                      # 0.01 deg
+    assert np.abs(detectors.response_tensor("V1") - lal.CachedDetectors[lal.VIRGO_DETECTOR].response).max() < 1e-6
+    ra, dec = np.deg2rad(197.45), np.deg2rad(-23.38)
+    lon, lat = detectors.lonlat_from_radec(ra, dec, gps)
+    for name, idx in (("H1", lal.LHO_4K_DETECTOR), ("L1", lal.LLO_4K_DETECTOR), ("V1", lal.VIRGO_DETECTOR)):
+        ref = lal.TimeDelayFromEarthCenter(lal.CachedDetectors[idx].location, ra, dec, lal.LIGOTimeGPS(gps))
+        assert abs(detectors.delay_from_geocentre(name, lon, lat) - ref) < 2e-6

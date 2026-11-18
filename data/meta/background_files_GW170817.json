@@ -1,0 +1,64 @@
+{
+ "GW170817": {
+  "event_gps": 1187008882.4,
+  "n_listed_h1": 113,
+  "n_listed_l1": 120,
+  "n_common": 112,
+  "chosen": [
+   {
+    "gps_start": 1187012608,
+    "offset_from_event_s": 5773.599999904633,
+    "files": {
+     "H1": {
+      "url": "https://gwosc.org/archive/data/O2_4KHZ_R1/1186988032/H-H1_GWOSC_O2_4KHZ_R1-1187012608-4096.hdf5",
+      "bytes": 129340237
+     },
+     "L1": {
+      "url": "https://gwosc.org/archive/data/O2_4KHZ_R1/1186988032/L-L1_GWOSC_O2_4KHZ_R1-1187012608-4096.hdf5",
+      "bytes": 129801994
+     }
+    }
+   },
+   {
+    "gps_start": 1186996224,
+    "offset_from_event_s": -10610.400000095367,
+    "files": {
+     "H1": {
+      "url": "https://gwosc.org/archive/data/O2_4KHZ_R1/1186988032/H-H1_GWOSC_O2_4KHZ_R1-1186996224-4096.hdf5",
+      "bytes": 129341554
+     },
+     "L1": {
+      "url": "https://gwosc.org/archive/data/O2_4KHZ_R1/1186988032/L-L1_GWOSC_O2_4KHZ_R1-1186996224-4096.hdf5",
+      "bytes": 129686217
+     }
+    }
+   }
+  ],
+  "rejected_before_filling": [
+   {
+    "gps_start": 1187008512,
+    "why": "overlaps the event file"
+   },
+   {
+    "gps_start": 1187004416,
+    "why": "overlaps the event file"
+   },
+   {
+    "gps_start": 1187000320,
+    "why": "duty cycle below 100 %",
+    "duty": {
+     "H1": 100.0,
+     "L1": 30.4443359375
+    }
+   },
+   {
+    "gps_start": 1187016704,
+    "why": "duty cycle below 100 %",
+    "duty": {
+     "H1": 50.7568359375,
+     "L1": 100.0
+    }
+   }
+  ]
+ }
+}

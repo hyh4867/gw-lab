@@ -1,0 +1,183 @@
+{
+ "gwtc1_datasets_in_file": [
+  "IMRPhenomPv2NRT_highSpin_posterior",
+  "IMRPhenomPv2NRT_highSpin_prior",
+  "IMRPhenomPv2NRT_lowSpin_posterior",
+  "IMRPhenomPv2NRT_lowSpin_prior"
+ ],
+ "gwtc1_lowspin": {
+  "mc": {
+   "median": 1.1975532234022657,
+   "lo": 1.1974448132759155,
+   "hi": 1.1976734941120035
+  },
+  "q": {
+   "median": 0.8659345586046039,
+   "lo": 0.7127801608838131,
+   "hi": 0.9865045965936243
+  },
+  "chieff": {
+   "median": 0.0031090735141150625,
+   "lo": -0.00514140756360975,
+   "hi": 0.01815266415560712
+  },
+  "m1": {
+   "median": 1.4790595881585529,
+   "lo": 1.385042554871445,
+   "hi": 1.6339658928430738
+  },
+  "m2": {
+   "median": 1.2807580711111188,
+   "lo": 1.1646584676065588,
+   "hi": 1.3663037372915838
+  },
+  "dl": {
+   "median": 39.95566849878731,
+   "lo": 24.93826533680754,
+   "hi": 47.299001856020524
+  },
+  "n_samples": 8078,
+  "sky_area90_deg2_same_method": 0.2501999105374774,
+  "counterpart_inside_90": true
+ },
+ "bilby": {
+  "summary": {
+   "mc": {
+    "median": 1.1974483638405573,
+    "lo": 1.1973154627286164,
+    "hi": 1.1975894815142303
+   },
+   "q": {
+    "median": 0.7943969996408057,
+    "lo": 0.6621181928968669,
+    "hi": 0.9737571183697292
+   },
+   "chieff": {
+    "median": -0.0003608266221546851,
+    "lo": -0.011208876851104615,
+    "hi": 0.01939315613382168
+   },
+   "m1": {
+    "median": 1.5453291498093433,
+    "lo": 1.3938844650742048,
+    "hi": 1.6976600962062023
+   },
+   "m2": {
+    "median": 1.227544022125157,
+    "lo": 1.124051635053172,
+    "hi": 1.3573426063578837
+   },
+   "dl": {
+    "median": 40.65672126229446,
+    "lo": 23.09872029900759,
+    "hi": 49.23921862081965
+   }
+  },
+  "vs_gwtc1": {
+   "mc": {
+    "our_median_in_gwtc1_90": true,
+    "gwtc1_median_in_our_90": true,
+    "width_ratio_ours_over_gwtc1": 1.19825863111813,
+    "both": true
+   },
+   "q": {
+    "our_median_in_gwtc1_90": true,
+    "gwtc1_median_in_our_90": true,
+    "width_ratio_ours_over_gwtc1": 1.1385133543694512,
+    "both": true
+   },
+   "chieff": {
+    "our_median_in_gwtc1_90": true,
+    "gwtc1_median_in_our_90": true,
+    "width_ratio_ours_over_gwtc1": 1.3137262284498157,
+    "both": true
+   },
+   "m1": {
+    "our_median_in_gwtc1_90": true,
+    "gwtc1_median_in_our_90": true,
+    "width_ratio_ours_over_gwtc1": 1.2203581777720671,
+    "both": true
+   },
+   "m2": {
+    "our_median_in_gwtc1_90": true,
+    "gwtc1_median_in_our_90": true,
+    "width_ratio_ours_over_gwtc1": 1.1569374856604278,
+    "both": true
+   }
+  },
+  "n_samples": 4321,
+  "m1_source": {
+   "median": 1.5301803642037264,
+   "lo": 1.3802202842600304,
+   "hi": 1.6810180178296883
+  },
+  "m2_source": {
+   "median": 1.2155104684871343,
+   "lo": 1.1130326121924665,
+   "hi": 1.3440366435863786
+  },
+  "mtot_source": {
+   "median": 2.7457593625454404,
+   "lo": 2.724355961562971,
+   "hi": 2.794050630022155
+  }
+ },
+ "verdicts": {
+  "M3": {
+   "interval90": [
+    1.1973154627286164,
+    1.1975894815142303
+   ],
+   "literature": [
+    1.1974,
+    1.1976
+   ],
+   "reproduced": true
+  },
+  "M4": {
+   "interval90": [
+    0.6621181928968669,
+    0.9737571183697292
+   ],
+   "literature": [
+    0.7,
+    1.0
+   ],
+   "reproduced": true
+  },
+  "M5": {
+   "m1_source_median": 1.5301803642037264,
+   "m2_source_median": 1.2155104684871343,
+   "range_m1": [
+    1.36,
+    1.6
+   ],
+   "range_m2": [
+    1.17,
+    1.36
+   ],
+   "reproduced": true
+  },
+  "M6": {
+   "interval90": [
+    23.09872029900759,
+    49.23921862081965
+   ],
+   "literature": [
+    26.0,
+    48.0
+   ],
+   "reproduced": true
+  },
+  "M7": {
+   "n_of_5": 5,
+   "reproduced": true
+  },
+  "M8": {
+   "counterpart_inside_90": true,
+   "area90_deg2": 18.764993290310805,
+   "pixel_deg2": 0.2501999105374774,
+   "reproduced": true
+  }
+ }
+}

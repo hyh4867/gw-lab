@@ -1,0 +1,68 @@
+{
+ "fiducial": {
+  "chirp_mass": 1.1975499371462532,
+  "mass_ratio": 0.6590511157300869,
+  "chi_1": 0.019997664781390315,
+  "chi_2": 0.0227028730541474,
+  "luminosity_distance": 119.05654869525829,
+  "dec": -0.3427221089030285,
+  "ra": 3.4084550814786154,
+  "theta_jn": 3.1257143721490293,
+  "psi": 0.9220845990762936,
+  "phase": 0.0,
+  "geocent_time": 1187008882.4306178
+ },
+ "checks": [
+  {
+   "d_chirp_mass": 0,
+   "d_mass_ratio": 0,
+   "relative_binning": 468.0664807593246,
+   "exact": 468.06384227188903,
+   "difference": 0.0026384874355471766
+  },
+  {
+   "d_chirp_mass": 5e-05,
+   "d_mass_ratio": 0,
+   "relative_binning": 463.07311106594545,
+   "exact": 463.0573823485092,
+   "difference": 0.01572871743627502
+  },
+  {
+   "d_chirp_mass": -5e-05,
+   "d_mass_ratio": 0,
+   "relative_binning": 463.4313145502288,
+   "exact": 463.4281317393482,
+   "difference": 0.003182810880616671
+  },
+  {
+   "d_chirp_mass": 0.0001,
+   "d_mass_ratio": -0.1,
+   "relative_binning": -18.424030395751018,
+   "exact": -18.744064641779477,
+   "difference": 0.32003424602845953
+  },
+  {
+   "d_chirp_mass": 0,
+   "d_mass_ratio": -0.2,
+   "relative_binning": -12.383299739343549,
+   "exact": -16.19485210119907,
+   "difference": 3.8115523618555223
+  },
+  {
+   "d_chirp_mass": 0.0002,
+   "d_mass_ratio": 0,
+   "relative_binning": 396.1027832071761,
+   "exact": 395.9700295602722,
+   "difference": 0.13275364690389324
+  }
+ ],
+ "ms_per_likelihood": 1.2362802028656006,
+ "gates": {
+  "H1": [],
+  "L1": [
+   1187008881.3815918
+  ],
+  "V1": []
+ },
+ "rho_net_hl_squared_over_2": 473.17522693729046
+}

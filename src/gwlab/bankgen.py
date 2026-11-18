@@ -13,7 +13,13 @@ from . import const, waveforms
 class MatchSpace:
     """Normalised, PSD-whitened templates on a coarse frequency grid; match maximised over time and phase."""
 
-    def __init__(self, psd_f, psd, dur=16, fs=const.FS, f_low=const.F_LOW, f_high=const.F_HIGH, pad=2):
+    def __init__(self, psd_f, psd, dur=16, fs=const.FS, f_low=const.F_LOW, f_high=const.F_HIGH, pad=2,
+                 kind="imr"):
+        """kind: "imr" (IMRPhenomD) or "f2" (hand-written non-spinning TaylorF2; chi is ignored).
+
+        The grid spacing 1/dur only has to resolve the phase *difference* of neighbouring templates, so
+        dur can be much shorter than the templates (stage 6: binary-neutron-star templates of ~1 minute)."""
+        self.kind = kind
         self.n = int(dur * fs)
         self.fs = fs
         self.f_low = f_low
@@ -26,7 +32,10 @@ class MatchSpace:
 
     def unit(self, mc, eta, chi):
         m1, m2 = waveforms.masses_from_mc_eta(mc, eta)
-        h = waveforms.imrphenomd(m1, m2, self.n, self.fs, self.f_low, chi1=chi, chi2=chi)[self.sl] * self.w
+        if self.kind == "f2":
+            h = waveforms.taylorf2(m1, m2, self.n, self.fs, self.f_low)[self.sl] * self.w
+        else:
+            h = waveforms.imrphenomd(m1, m2, self.n, self.fs, self.f_low, chi1=chi, chi2=chi)[self.sl] * self.w
         h = h / np.sqrt(np.sum(h.real**2 + h.imag**2))
         return h.astype(np.complex64)
 
@@ -45,7 +54,7 @@ def draw(rng, mc_lo, mc_hi, eta_lo, chi_lo, chi_hi):
 
 
 def stochastic_bank(space, rng, region, min_match=0.95, max_reject=400, max_templates=20000,
-                    tau_window=0.12, chunk=64, log=None, m2_min=None, mtot_max=None):
+                    tau_window=0.12, chunk=64, log=None, m2_min=None, mtot_max=None, m1_max=None):
     mc_lo, mc_hi, eta_lo, chi_lo, chi_hi = region
     params, units, tau = [], [], []
     rejects, n_prop = 0, 0
@@ -54,7 +63,8 @@ def stochastic_bank(space, rng, region, min_match=0.95, max_reject=400, max_temp
     while rejects < max_reject and len(params) < max_templates:
         p = draw(rng, *region)
         m1, m2 = waveforms.masses_from_mc_eta(p[0], p[1])
-        if (m2_min is not None and m2 < m2_min) or (mtot_max is not None and m1 + m2 > mtot_max):
+        if ((m2_min is not None and m2 < m2_min) or (mtot_max is not None and m1 + m2 > mtot_max)
+                or (m1_max is not None and m1 > m1_max)):
             continue
         n_prop += 1
         u = space.unit(*p)
@@ -73,6 +83,37 @@ def stochastic_bank(space, rng, region, min_match=0.95, max_reject=400, max_temp
             tau_arr = np.append(tau_arr, t)
             rejects = 0
             if log and len(params) % 100 == 0:
+                log(len(params), n_prop)
+        else:
+            rejects += 1
+    return np.array(params), U, n_prop
+
+
+def top_up(space, rng, params, U, sampler, min_match=0.95, max_reject=300, tau_window=0.12, chunk=64, log=None):
+    """Continue a stochastic bank with a different proposal distribution (stage 6: uniform in (m1, m2), which
+    reaches the corners of the mass range that the chirp-time proposal rarely visits).
+    sampler(rng) returns (mc, eta, chi). Returns the extended (params, U, n_proposals)."""
+    params = [tuple(p) for p in params]
+    tau_arr = waveforms.chirp_time(np.array([p[0] for p in params]), space.f_low)
+    rejects, n_prop = 0, 0
+    while rejects < max_reject:
+        p = sampler(rng)
+        n_prop += 1
+        u = space.unit(*p)
+        t = waveforms.chirp_time(p[0], space.f_low)
+        near = np.flatnonzero(np.abs(tau_arr - t) <= tau_window * t)
+        near = near[np.argsort(np.abs(tau_arr[near] - t))]
+        ok = True
+        for c in range(0, len(near), chunk):
+            if space.match(u, U[near[c:c + chunk]]).max() >= min_match:
+                ok = False
+                break
+        if ok:
+            params.append(p)
+            U = np.vstack([U, u[None, :]])
+            tau_arr = np.append(tau_arr, t)
+            rejects = 0
+            if log:
                 log(len(params), n_prop)
         else:
             rejects += 1

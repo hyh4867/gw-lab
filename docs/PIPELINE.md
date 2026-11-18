@@ -149,3 +149,49 @@ f(t) chirp mass
 - bilby는 4개 프로세스(`npool=4`)로 돌렸다.
 - CNN의 단일 검출기 trigger는 ±0.5초 안 최대인 창 가운데 logit이 큰 1,000개만 남긴다(문턱 값을 따로 정하지 않기 위해).
 - `compare_events.py`의 사이클 수는 최적 템플릿의 해석 신호(analytic signal) 위상에서, 순간 주파수가 35 Hz 아래로 내려가는 마지막 시각부터 진폭 정점까지로 센다.
+
+# 6단계 (GW170817) 실행 순서
+
+기준은 [PREREGISTRATION_STAGE6.md](PREREGISTRATION_STAGE6.md)에 있다. 1~3은 자료를 받기 전에 실행했다.
+
+| 순서 | 명령 | 하는 일 | 출력 | 걸린 시간 |
+|---|---|---|---|---|
+| 1 | `python scripts/make_bns_bank.py` | 무회전 TaylorF2 확률적 뱅크(1~2 M☉), fitting factor 시험 | `results/bank_bns.csv`, `results/bank_bns.json` (1차 배치는 `bank_bns_pass1.*`) | 15분 + 7분 |
+| 2 | `python scripts/select_background_files.py GW170817` | 메타데이터로 배경 파일 선택 | `data/meta/background_files_GW170817.json` | 수 초 |
+| 3 | (사전 등록 커밋) | | | |
+| 4 | `python scripts/download_stage6.py` | 자료 A, B, 배경 파일, GWTC-1 표본 | `data/raw/`, `data/meta/stage6_files.json` | 약 8분 |
+| 5 | `python scripts/run_search6.py --start 1187006835` | 자동 gating 뒤 사건 파일 탐색 (H1, L1) | `results/triggers/bns_gated/<gps>/` (git 제외) | 13분 |
+| 6 | `python scripts/run_search6.py --start 1187006835 --variant raw` | gating 없이 같은 탐색 | `results/triggers/bns_raw/<gps>/` | 12분 |
+| 7 | `python scripts/analyze_gw170817.py` | zero-lag 후보, glitch 처리 전후, 세밀한 뱅크, Virgo, TaylorF2 대 IMRPhenomD, 그림 18·19 | `results/event_gw170817.json` | 3.4분 |
+| 8 | `python scripts/run_search6.py --start 1187012608 1186996224` | 배경 파일 2쌍 탐색 | `results/triggers/bns_gated/<gps>/` | 29분 |
+| 9 | `python scripts/background6.py` (와 `raw`) | time slide 배경, 그림 21 | `results/background_GW170817.json` | 수 초 |
+| 10 | `python scripts/chirp_newton6.py` | Newton chirp 필터: 주입 500개로 보정 후 사건에 적용, 그림 20 | `results/chirp_newton_GW170817.json` | 12분 |
+| 11 | `python scripts/sky_gw170817.py` | 세 검출기 결맞음 통계량으로 하늘 위치, 그림 22 | `results/sky_gw170817.json` | 26초 |
+| 12 | `python scripts/run_pe_bns.py --dry`, `python scripts/run_pe_bns.py`, `python scripts/run_pe_bns.py --check` | relative binning 점검, bilby + dynesty, 끝난 뒤 사후표본 40개에서 정확한 가능도와 비교 | `results/pe_bilby_GW170817_dry.json`, `results/pe_bilby_GW170817.json`, `results/pe_bilby_GW170817_rbcheck.json` | 1.5분, 2.1시간 (npool 3), 2분 |
+| 13 | `python scripts/compare_pe6.py` | 문헌·GWTC-1 표본과 비교, 판정 M3~M8, 그림 23 | `results/pe_compare_GW170817.json` | 수 초 |
+| 14 | `python scripts/compare_three.py` | 세 사건 비교, GW151226의 TaylorF2 측정, 그림 24 | `results/compare_three.json` | 1.5분 |
+
+모두 screen 분리 세션에서 `caffeinate -i`로 하나씩 돌렸다. 탐색은 템플릿 250개마다, Newton 주입은 25개마다, PE는 10분마다 체크포인트를 남긴다.
+
+## 6단계의 자료 흐름
+
+```
+strain (4096 s 파일)
+  → 자동 gating: 64초 블록 whitening → |x| > 50σ인 곳 ±0.1초를 0으로, 양쪽 0.5초 roll-off   [gate.py]
+  → 256초 구간 (128초 간격, 구간의 112~240초가 유효)                                      [bns.LAYOUT]
+  → 구간마다 FFT, PSD(512초 중앙값 Welch), w = s̃/S (30~1024 Hz, complex64)               [bns.reduce_prep]
+  → 템플릿마다: 기저 9개에서 TaylorF2 위상 재구성 → 모든 구간에 ifft(길이 1/4) → 최대 갱신  [f2fast.py, bns.filter_bank]
+  → 구간마다 clustering, χ², 재가중 SNR → trigger                                          [bns.triggers]
+  → H1–L1 동시 발생(15 ms), time slide                                                     [coinc.py, background6.py]
+```
+
+## 6단계 모듈
+
+| 파일 | 내용 |
+|---|---|
+| `src/gwlab/f2fast.py` | TaylorF2 위상을 고정 기저의 선형 결합으로 다시 만드는 클래스 |
+| `src/gwlab/bns.py` | 긴 템플릿용 탐색 루프(템플릿 바깥, 구간 안쪽), χ², trigger |
+| `src/gwlab/gate.py` | glitch 탐지와 inverse Tukey gating |
+| `src/gwlab/detectors.py` | Virgo, 항성시, 적경·적위 → 지구 고정 좌표 추가 |
+| `src/gwlab/bankgen.py` | TaylorF2 match, 보충 배치(`top_up`) 추가 |
+| `scripts/ev6common.py` | 자료 A·B 읽기, 사건 구간, 템플릿 scan, 기하학적 지연 |

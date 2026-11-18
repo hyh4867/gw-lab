@@ -1,4 +1,4 @@
-"""Antenna patterns and arrival-time delays for H1 and L1 from detector tensors.
+"""Antenna patterns and arrival-time delays for H1, L1 and Virgo from detector tensors.
 
 Vertex positions (m) and arm unit vectors are the values published in LAL (LALDetectors.h),
 Earth-fixed frame. Tests compare the results with lal.ComputeDetAMResponse.
@@ -18,7 +18,25 @@ DETECTORS = {
         "x": np.array([-0.95457412153, -0.14158077340, -0.26218911324]),
         "y": np.array([0.29774156894, -0.48791033647, -0.82054461286]),
     },
+    "V1": {  # stage 6
+        "loc": np.array([4.54637409900e6, 8.42989697626e5, 4.37857696241e6]),
+        "x": np.array([-0.70045821479, 0.20848948619, 0.68256166277]),
+        "y": np.array([-0.05379255368, -0.96908180549, 0.24080451708]),
+    },
 }
+
+
+def gmst(gps, leap=18.0):
+    """Greenwich mean sidereal time (rad) at a GPS time: 280.46061837 deg + 360.98564736629 deg per day
+    from J2000.0, with UT1 taken as UTC = GPS - leap seconds (18 s since 2017-01-01; 17 s in 2015-2016).
+    UT1-UTC (< 0.9 s) and the equation of the equinoxes are ignored: error below 0.01 deg."""
+    jd = 2444244.5 + (gps - leap) / 86400.0          # GPS epoch 1980-01-06 00:00:00 UTC
+    return np.mod(np.deg2rad(280.46061837 + 360.98564736629 * (jd - 2451545.0)), 2 * np.pi)
+
+
+def lonlat_from_radec(ra, dec, gps):
+    """Earth-fixed longitude/latitude (rad) of a sky position at a GPS time."""
+    return np.mod(ra - gmst(gps) + np.pi, 2 * np.pi) - np.pi, dec
 
 
 def response_tensor(det):

@@ -207,6 +207,52 @@ Two consequences. First, the reach of the method grows as T²: nine times more d
 
 *Code:* `coinc.py` (`all_pairs_rate`, `no_reuse`), `scripts/background5.py`.
 
+## 9. A binary neutron star: a signal that is all inspiral
+
+**Where the merger is.** The inspiral ends near the innermost stable circular orbit, f_ISCO = c³ / (6^{3/2} π G M). For GW150914 (M ≈ 72 M☉ in the detector frame) this is 61 Hz, in the middle of the sensitive band, and three quarters of the SNR² comes from above it. For a neutron-star binary with M ≈ 2.8 M☉ it is about 1.6 kHz, above the band used here (30–1024 Hz) and far above where the detectors are most sensitive. Everything the detector sees is inspiral. A post-Newtonian template that knows nothing about merger and ringdown is then as good as a full inspiral–merger–ringdown model, which is the opposite of what happens for heavy black holes.
+
+**How long and how many cycles.** At leading order the time left before merger at frequency f is τ = (5/256) (πf)^{−8/3} (Gℳ/c³)^{−5/3}. For ℳ = 1.2 M☉ this is 55 s from 30 Hz (160 s from 20 Hz), against 0.1 s from 35 Hz for GW150914. The number of cycles is N = ∫ f dτ ∝ (ℳ f)^{−5/3}: about 2,700 from 30 Hz.
+
+**What a long signal demands.** (i) The analysis segment must be longer than the template plus the filter transients, hence 256-s segments instead of 32 s. (ii) The template must stay in phase for thousands of cycles: a relative error δℳ/ℳ of 10⁻⁴ is already a phase error of order one radian. This is why the chirp mass of GW170817 is known to four digits while that of GW150914 is known to 10 %, and why the bank is dense in ℳ. (iii) A segment of 256 s at 4096 Hz has 2.5 × 10⁵ frequency bins in band, so thousands of templates cannot be stored; the 3.5PN phase is a linear combination of nine fixed functions of f (powers of f^{1/3} and two logarithmic terms) with mass-dependent coefficients, and each template is rebuilt from that basis.
+
+**Post-Newtonian terms.** The TaylorF2 phase is ψ(f) = 2πf t_c − φ_c − π/4 + (3 / 128η v⁵) Σ_k a_k v^k with v = (πGMf/c³)^{1/3}. At 30 Hz for neutron stars v ≈ 0.07 c, so the series converges quickly, but 1/v⁵ is of order 10⁶: the 1PN term alone contributes hundreds of radians. A filter that keeps only the leading term (section 6) still finds the signal, because most of the extra phase is absorbed by a shift of ℳ and of the coalescence time, but the recovered chirp mass is about 1.3 % low: the 1PN term has the same sign as the leading term, so the data look like a slightly lighter binary. For the black-hole events the bias has the opposite sign because there it comes from the merger, which sweeps up in frequency faster than the inspiral law.
+
+**What is left out.** Tidal deformation enters at 5PN order (∝ v¹⁰ relative to the leading term, with a large coefficient proportional to the tidal deformability Λ̃) and matters above a few hundred hertz; neutron-star spins are assumed small. Neither is in the search templates.
+
+*Code:* `f2fast.py`, `bns.py`, `scripts/make_bns_bank.py`, `scripts/run_search6.py`, `scripts/chirp_newton6.py`.
+
+## 10. Glitches and gating
+
+**Why one glitch matters.** A matched filter is optimal in stationary Gaussian noise. A glitch is a short burst that is neither. After whitening, a glitch of amplitude A (in units of the noise standard deviation) lasting a few samples acts like an impulse: its matched-filter output is the template itself, time-reversed, scaled by A. For a one-minute template the response is spread over a minute of output; for A of several hundred it is far above the noise everywhere in that minute. Whitening also rings: the impulse response of the whitening filter (here truncated to ±2 s) is excited at full strength.
+
+**Gating.** The simplest cure is to multiply the strain by a window that is zero around the glitch and returns smoothly to one (an inverse Tukey window). The smooth edges matter: a hard cut is itself a discontinuity and would ring through the whitening filter. The glitch is found on the whitened data, where its size can be compared with the noise.
+
+**The price.** The window also deletes the signal under it. In an inspiral, time maps to frequency, so cutting a time interval is, to a good approximation, cutting a frequency interval. If w(f) is the SNR² density of the template and g(f) the window evaluated at the time the signal passes frequency f, the gated data give
+
+    ρ_gated / ρ_full = ∫ w g df / ∫ w df,
+
+while the template, which is not gated, keeps its full norm. A cut 1.1 s before merger with ±0.1 s zeroed and 0.5-s tapers removes or attenuates roughly 110–175 Hz, close to the peak of w(f). The loss is therefore not negligible (about 12 % for the PSDs available before the data were downloaded), even though the cut is 1.2 s out of a minute. The estimate of the chirp mass is hardly affected, because the phase evolution on either side of the gap still has to fit one template.
+
+**Alternatives.** Modelling the glitch and subtracting it (as the LIGO–Virgo parameter estimation did, with a wavelet model) keeps the signal but needs a glitch model; it is not attempted here. The glitch-subtracted data are used only for comparison.
+
+*Code:* `gate.py`, `scripts/analyze_gw170817.py`.
+
+## 11. Locating a source with three detectors
+
+**Time delays.** A plane wave from direction n̂ reaches a detector at position r at time t_geocentre − n̂·r/c. Two detectors a baseline d apart measure a delay Δt = −n̂·d/c, which fixes the angle between n̂ and the baseline: a ring on the sky. Its width is σ_t c / (|d| sin θ). With matched filtering the timing error is σ_t ≈ 1 / (2π σ_f ρ), where σ_f is the effective bandwidth; for ρ ≈ 20 and σ_f ≈ 100 Hz this is under 0.1 ms, against a light travel time of 10 ms between Hanford and Livingston, so the ring is thin. A third detector gives a second ring, and two rings meet in two points.
+
+**A weak third detector still helps.** The amplitude a detector records is proportional to its antenna response (F₊, F×) in that direction. If a detector that is sensitive enough to have seen the signal records almost nothing, the source must lie near a direction where its response is small. For GW170817, Virgo's response was about a third of the LIGO detectors' and its noise was higher, so the SNR there was about 2: too little for timing, enough to exclude most of the Hanford–Livingston ring.
+
+**Coherent statistic.** These pieces of information are combined in one quantity. For a direction n̂, shift the complex matched-filter outputs z_d(t) by the delays so that they refer to one arrival time, and normalise them to unit noise variance, y_d = z_d / σ_d. A signal from n̂ with any distance, inclination, polarisation angle and phase gives y_d = σ_d (F₊,d a₊ + F×,d a×) with two complex numbers a₊, a×: the vector y lies in a two-dimensional subspace fixed by the direction. The coherent SNR² is the squared length of the projection of y onto that subspace, ρ_coh² = y† P(n̂) y. It equals the full network SNR² when times, amplitudes and phases all agree with n̂ and is smaller otherwise. With two detectors the subspace is the whole space, so only the time delay constrains the direction. Treating exp(ρ_coh²/2) as a likelihood with a uniform prior on the sky gives an approximate map; it ignores the priors on distance and inclination that a full Bayesian analysis includes.
+
+*Code:* `detectors.py`, `scripts/sky_gw170817.py`.
+
+## 12. Relative binning: a fast likelihood for long signals
+
+Evaluating the likelihood of a one-minute signal needs the waveform at 10⁵ frequencies. Relative binning (heterodyning) uses the fact that the sampler only ever visits waveforms close to a good reference waveform h₀(f). The ratio r(f) = h(f)/h₀(f) is smooth, because the rapidly varying phase cancels, and can be approximated as linear in f inside a few hundred frequency bins chosen so that the phase difference changes by a bounded amount per bin. The inner products ⟨d|h⟩ and ⟨h|h⟩ then reduce to sums over bins of pre-computed weights times the values of r at the bin edges. The waveform is evaluated only at the bin edges, and one likelihood costs about a millisecond instead of a second. The approximation is checked against the exact likelihood near the reference before it is trusted.
+
+*Code:* `scripts/run_pe_bns.py` (bilby's `RelativeBinningGravitationalWaveTransient`).
+
 ## References
 
 - B. P. Abbott et al., "Observation of Gravitational Waves from a Binary Black Hole Merger", PRL 116, 061102 (2016).
@@ -223,3 +269,9 @@ Two consequences. First, the reach of the method grows as T²: nine times more d
 - E. Poisson and C. M. Will, "Gravitational waves from inspiraling compact binaries: Parameter estimation using second-post-Newtonian waveforms", PRD 52, 848 (1995) (spin-orbit term β and the mass-ratio–spin degeneracy).
 - I. W. Harry, B. Allen and B. S. Sathyaprakash, "Stochastic template placement algorithm for gravitational wave data analysis", PRD 80, 104014 (2009).
 - G. Ashton et al., "Bilby: A user-friendly Bayesian inference library for gravitational-wave astronomy", ApJS 241, 27 (2019).
+- B. P. Abbott et al., "GW170817: Observation of Gravitational Waves from a Binary Neutron Star Inspiral", PRL 119, 161101 (2017).
+- B. P. Abbott et al., "Properties of the Binary Neutron Star Merger GW170817", PRX 9, 011001 (2019).
+- B. P. Abbott et al., "Multi-messenger Observations of a Binary Neutron Star Merger", ApJL 848, L12 (2017).
+- S. A. Usman et al., "The PyCBC search for gravitational waves from compact binary coalescence", CQG 33, 215004 (2016) (gating of loud glitches).
+- S. Fairhurst, "Triangulation of gravitational wave sources with a network of detectors", New J. Phys. 11, 123006 (2009).
+- B. Zackay, L. Dai and T. Venumadhav, "Relative Binning and Fast Likelihood Evaluation for Gravitational Wave Parameter Estimation", arXiv:1806.08792 (2018).

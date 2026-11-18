@@ -1,0 +1,79 @@
+[
+ {
+  "use": "data A: GWTC-1 release (glitch present in L1)",
+  "file": "H-H1_GWOSC_4KHZ_R1-1187006835-4096.hdf5",
+  "url": "https://gwosc.org/eventapi/json/GWTC-1-confident/GW170817/v3/H-H1_GWOSC_4KHZ_R1-1187006835-4096.hdf5",
+  "bytes": 129346425,
+  "sha256": "167fb934a7468d1879b273e9fd6b2f88be028f1511d5aabf82ed36aeaa74703c"
+ },
+ {
+  "use": "data B: discovery-paper release (L1 glitch subtracted by LIGO)",
+  "file": "H-H1_LOSC_CLN_4_V1-1187007040-2048.hdf5",
+  "url": "https://gwosc.org/eventapi/json/O1_O2-Preliminary/GW170817/v2/H-H1_LOSC_CLN_4_V1-1187007040-2048.hdf5",
+  "bytes": 57932612,
+  "sha256": "27c47e0620a4668d63d13b49e3a9291a9f73ba4ea56e745999d997f6ea0b2ff6"
+ },
+ {
+  "use": "data A: GWTC-1 release (glitch present in L1)",
+  "file": "L-L1_GWOSC_4KHZ_R1-1187006835-4096.hdf5",
+  "url": "https://gwosc.org/eventapi/json/GWTC-1-confident/GW170817/v3/L-L1_GWOSC_4KHZ_R1-1187006835-4096.hdf5",
+  "bytes": 129727892,
+  "sha256": "667ed4f972e24b456c7abffefe7524395535e92314e6a2314fa2a963abf0bff3"
+ },
+ {
+  "use": "data B: discovery-paper release (L1 glitch subtracted by LIGO)",
+  "file": "L-L1_LOSC_CLN_4_V1-1187007040-2048.hdf5",
+  "url": "https://gwosc.org/eventapi/json/O1_O2-Preliminary/GW170817/v2/L-L1_LOSC_CLN_4_V1-1187007040-2048.hdf5",
+  "bytes": 62057913,
+  "sha256": "f6bad02d25ffd645048d56e34f941b0a219a34afac2170f658151c5b7e71fea2"
+ },
+ {
+  "use": "data A: GWTC-1 release (glitch present in L1)",
+  "file": "V-V1_GWOSC_4KHZ_R1-1187006835-4096.hdf5",
+  "url": "https://gwosc.org/eventapi/json/GWTC-1-confident/GW170817/v3/V-V1_GWOSC_4KHZ_R1-1187006835-4096.hdf5",
+  "bytes": 129440438,
+  "sha256": "7e6bf08ddb9ba1af1415828c96dcaef5046f9d53ec73e707587ed9993cc56ac3"
+ },
+ {
+  "use": "data B: discovery-paper release (L1 glitch subtracted by LIGO)",
+  "file": "V-V1_LOSC_CLN_4_V1-1187007040-2048.hdf5",
+  "url": "https://gwosc.org/eventapi/json/O1_O2-Preliminary/GW170817/v2/V-V1_LOSC_CLN_4_V1-1187007040-2048.hdf5",
+  "bytes": 64737908,
+  "sha256": "31626b9ea4b63cf35a163b95dc8c315162585d9e48d3c5a82332ffa069c1877d"
+ },
+ {
+  "use": "background GW170817",
+  "file": "H-H1_GWOSC_O2_4KHZ_R1-1187012608-4096.hdf5",
+  "url": "https://gwosc.org/archive/data/O2_4KHZ_R1/1186988032/H-H1_GWOSC_O2_4KHZ_R1-1187012608-4096.hdf5",
+  "bytes": 129340237,
+  "sha256": "afd2ca59b3a418f9b5ddf595aa8abc29b3646fb3fdb8254df6baf176990aaaf1"
+ },
+ {
+  "use": "background GW170817",
+  "file": "L-L1_GWOSC_O2_4KHZ_R1-1187012608-4096.hdf5",
+  "url": "https://gwosc.org/archive/data/O2_4KHZ_R1/1186988032/L-L1_GWOSC_O2_4KHZ_R1-1187012608-4096.hdf5",
+  "bytes": 129801994,
+  "sha256": "463321d4844c7d55714895418d2c0b715f071807dcccb0568757cb019a031f95"
+ },
+ {
+  "use": "background GW170817",
+  "file": "H-H1_GWOSC_O2_4KHZ_R1-1186996224-4096.hdf5",
+  "url": "https://gwosc.org/archive/data/O2_4KHZ_R1/1186988032/H-H1_GWOSC_O2_4KHZ_R1-1186996224-4096.hdf5",
+  "bytes": 129341554,
+  "sha256": "309a784ef4deca33db0fa6f9542c9608acccc052937675f53c89ff759b1b7686"
+ },
+ {
+  "use": "background GW170817",
+  "file": "L-L1_GWOSC_O2_4KHZ_R1-1186996224-4096.hdf5",
+  "url": "https://gwosc.org/archive/data/O2_4KHZ_R1/1186988032/L-L1_GWOSC_O2_4KHZ_R1-1186996224-4096.hdf5",
+  "bytes": 129686217,
+  "sha256": "b24530a634e791a099cc01df2a5c24c7d23b7441425cb82ce1570a916a62f013"
+ },
+ {
+  "use": "GWTC-1 posterior samples",
+  "file": "GW170817_GWTC-1.hdf5",
+  "url": "https://dcc.ligo.org/public/0157/P1800370/005/GW170817_GWTC-1.hdf5",
+  "bytes": 2520704,
+  "sha256": "eff59472991bb0f0fa8c1e58057093ce07b82eb4c112364e3578ba16fe54eca9"
+ }
+]

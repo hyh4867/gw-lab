@@ -1,0 +1,34 @@
+{
+ "seed": 20261117,
+ "component_mass_range": [
+  1.0,
+  2.0
+ ],
+ "f_low": 30.0,
+ "min_match": 0.95,
+ "max_reject": 150,
+ "tau_window": 0.01,
+ "n_templates": 2990,
+ "n_proposals": 19631,
+ "seconds_bank": 901.4081311225891,
+ "fitting_factor_taylorf2_signals": {
+  "n": 500,
+  "min": 0.43597865104675293,
+  "p01": 0.9210139387845993,
+  "p10": 0.9627380847930909,
+  "median": 0.9824795126914978,
+  "frac_below_0.95": 0.042,
+  "frac_below_0.90": 0.006
+ },
+ "fitting_factor_imrphenomd_signals": {
+  "n": 100,
+  "min": 0.819277286529541,
+  "p01": 0.936277529001236,
+  "p10": 0.9602696597576141,
+  "median": 0.9822495877742767,
+  "frac_below_0.95": 0.04,
+  "frac_below_0.90": 0.01
+ },
+ "psd": "O1 H1, first 512 s of the GW150914 file",
+ "note": "test points drawn from the proposal distribution (uniform in chirp time and eta)"
+}

@@ -1,0 +1,37 @@
+{
+ "seed": 20261117,
+ "component_mass_range": [
+  1.0,
+  2.0
+ ],
+ "f_low": 30.0,
+ "min_match": 0.95,
+ "max_reject": 150,
+ "topup_max_reject": 300,
+ "tau_window": 0.01,
+ "n_templates": 3360,
+ "n_templates_pass1": 2990,
+ "n_proposals": 19631,
+ "n_proposals_topup": 11641,
+ "seconds_this_run": 443.2797601222992,
+ "fitting_factor_taylorf2_signals": {
+  "n": 500,
+  "min": 0.8458728194236755,
+  "p01": 0.946686704158783,
+  "p10": 0.9655103206634521,
+  "median": 0.984266072511673,
+  "frac_below_0.95": 0.016,
+  "frac_below_0.90": 0.002
+ },
+ "fitting_factor_imrphenomd_signals": {
+  "n": 100,
+  "min": 0.956585168838501,
+  "p01": 0.9570013564825058,
+  "p10": 0.9664724111557007,
+  "median": 0.9845309853553772,
+  "frac_below_0.95": 0.0,
+  "frac_below_0.90": 0.0
+ },
+ "psd": "O1 H1, first 512 s of the GW150914 file",
+ "note": "test points: half uniform in chirp time and eta, half uniform in (m1, m2); every fifth one as IMRPhenomD"
+}
